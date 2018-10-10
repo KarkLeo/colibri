@@ -1,0 +1,2597 @@
+@charset "UTF-8";
+/* Сетка представляеться собой колоночную структуру с фиксированным промежутком.
+   Колонки динамически расширяются до определенного предела (до ширины определенной контейнера).
+   По бокам от крайних колонок существует отступ равен половине промежутка.
+   При маленьком разрешении все колонки становяться одной ширины равной ширике колонки,
+   в таком лучае отступы по бокам равные четверит промежутка.
+   Колонки и контейнер опредедляется параметрически.*/
+.container {
+  margin: 0 auto;
+  max-width: 1500px;
+  padding: 0 0 30px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .container {
+      padding: 0 30px; } }
+
+* {
+  padding: 0;
+  margin: 0; }
+
+body {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 30px;
+  font-size: 16px;
+  color: #000000; }
+
+.page_block {
+  width: 100%;
+  overflow: hidden; }
+
+.title {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 52px;
+  font-size: 36px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000000;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: left; }
+
+.subtitle {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 30px;
+  font-size: 24px;
+  padding-bottom: 30px;
+  text-align: left; }
+
+.description, .texts {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 30px;
+  font-size: 16px;
+  color: #000000;
+  text-align: left;
+  padding-bottom: 30px; }
+
+.form-title {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 52px;
+  font-size: 36px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  padding-top: 60px;
+  padding-bottom: 60px; }
+
+.form-description {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 20px;
+  font-size: 14px;
+  color: #FFFFFF;
+  padding-bottom: 30px; }
+
+.form-button {
+  display: block;
+  width: calc( (((100% - 720px + 120px)/6)*2) + 120px);
+  height: 60px;
+  margin: 0 60px;
+  border: 1px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 60px;
+  font-size: 18px;
+  text-align: center;
+  color: #FFFFFF;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  transition: all 500ms ease-in-out; }
+  .form-button:hover {
+    background: #FFFFFF;
+    color: #394EE5; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .form-button {
+      margin: 30px 0 60px;
+      width: 100%;
+      flex: 0 0 100%; } }
+  .form-button:focus {
+    outline: none; }
+
+.header__title {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  font-size: 96px;
+  color: #FFFFFF;
+  margin-top: 210px; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .header__title {
+      margin-top: 90px;
+      font-size: 3rem; } }
+
+.header__description {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 20px;
+  font-size: 14px;
+  color: #FFFFFF;
+  border-top: 1px solid #ffffff;
+  margin-top: 210px; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .header__description {
+      margin-top: 30px; } }
+  .header__description p {
+    padding-bottom: 20px; }
+
+.invis {
+  visibility: hidden; }
+
+.hidden {
+  display: none; }
+
+/* Сетка представляеться собой колоночную структуру с фиксированным промежутком.
+   Колонки динамически расширяются до определенного предела (до ширины определенной контейнера).
+   По бокам от крайних колонок существует отступ равен половине промежутка.
+   При маленьком разрешении все колонки становяться одной ширины равной ширике колонки,
+   в таком лучае отступы по бокам равные четверит промежутка.
+   Колонки и контейнер опредедляется параметрически.*/
+.container {
+  margin: 0 auto;
+  max-width: 1500px;
+  padding: 0 0 30px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .container {
+      padding: 0 30px; } }
+
+* {
+  padding: 0;
+  margin: 0; }
+
+body {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 30px;
+  font-size: 16px;
+  color: #000000; }
+
+.page_block {
+  width: 100%;
+  overflow: hidden; }
+
+.title {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 52px;
+  font-size: 36px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000000;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: left; }
+
+.subtitle {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 30px;
+  font-size: 24px;
+  padding-bottom: 30px;
+  text-align: left; }
+
+.description, .texts {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 30px;
+  font-size: 16px;
+  color: #000000;
+  text-align: left;
+  padding-bottom: 30px; }
+
+.form-title {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 52px;
+  font-size: 36px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  padding-top: 60px;
+  padding-bottom: 60px; }
+
+.form-description {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 20px;
+  font-size: 14px;
+  color: #FFFFFF;
+  padding-bottom: 30px; }
+
+.form-button {
+  display: block;
+  width: calc( (((100% - 720px + 120px)/6)*2) + 120px);
+  height: 60px;
+  margin: 0 60px;
+  border: 1px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 60px;
+  font-size: 18px;
+  text-align: center;
+  color: #FFFFFF;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  transition: all 500ms ease-in-out; }
+  .form-button:hover {
+    background: #FFFFFF;
+    color: #394EE5; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .form-button {
+      margin: 30px 0 60px;
+      width: 100%;
+      flex: 0 0 100%; } }
+  .form-button:focus {
+    outline: none; }
+
+.header__title {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  font-size: 96px;
+  color: #FFFFFF;
+  margin-top: 210px; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .header__title {
+      margin-top: 90px;
+      font-size: 3rem; } }
+
+.header__description {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 20px;
+  font-size: 14px;
+  color: #FFFFFF;
+  border-top: 1px solid #ffffff;
+  margin-top: 210px; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .header__description {
+      margin-top: 30px; } }
+  .header__description p {
+    padding-bottom: 20px; }
+
+.invis {
+  visibility: hidden; }
+
+.hidden {
+  display: none; }
+
+.header {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+  .header.item_header {
+    height: auto;
+    min-height: 600px;
+    padding-bottom: 60px; }
+    .header.item_header .header__title {
+      /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *4 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (4 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+      width: calc( (((100% - 720px)/6)*4) + (4 - 1)*120px);
+      margin: 0 60px;
+      flex: 0 0 calc( (((100% - 720px)/6)*4) + (4 - 1)*120px);
+      font-family: Lato, sans-serif;
+      font-style: normal;
+      font-weight: 900;
+      line-height: normal;
+      font-size: 96px;
+      color: #FFFFFF;
+      margin-top: 210px; }
+      @media all and (orientation: portrait), all and (max-width: 900px) {
+        .header.item_header .header__title {
+          width: 100%;
+          margin: 0;
+          flex: 0 0 100%; } }
+      @media all and (orientation: portrait), all and (max-width: 900px) {
+        .header.item_header .header__title {
+          margin-top: 90px;
+          font-size: 3rem; } }
+    .header.item_header .header__description {
+      /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *2 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (2 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+      width: calc( (((100% - 720px)/6)*2) + (2 - 1)*120px);
+      margin: 0 60px;
+      flex: 0 0 calc( (((100% - 720px)/6)*2) + (2 - 1)*120px);
+      font-family: Lato, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 20px;
+      font-size: 14px;
+      color: #FFFFFF;
+      border-top: 1px solid #ffffff;
+      margin-top: 210px; }
+      @media all and (orientation: portrait), all and (max-width: 900px) {
+        .header.item_header .header__description {
+          width: 100%;
+          margin: 0;
+          flex: 0 0 100%; } }
+      @media all and (orientation: portrait), all and (max-width: 900px) {
+        .header.item_header .header__description {
+          margin-top: 30px; } }
+      .header.item_header .header__description p {
+        padding-bottom: 20px; }
+  .header__logo {
+    position: absolute;
+    top: 2.19619vh;
+    left: 2.19619vw;
+    z-index: 50; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .header__logo {
+        left: 30px;
+        top: 30px; }
+        .header__logo img {
+          max-width: 50%; } }
+  .header .container {
+    margin: 0 auto;
+    max-width: 1500px;
+    padding: 0 0 30px;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .header .container {
+        padding: 0 30px; } }
+  .header__title {
+    /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *3 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (3 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+    width: calc( (((100% - 720px)/6)*3) + (3 - 1)*120px);
+    margin: 0 60px;
+    flex: 0 0 calc( (((100% - 720px)/6)*3) + (3 - 1)*120px); }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .header__title {
+        width: 100%;
+        margin: 0;
+        flex: 0 0 100%; } }
+  .header__description {
+    /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *3 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (3 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+    width: calc( (((100% - 720px)/6)*3) + (3 - 1)*120px);
+    margin: 0 60px;
+    flex: 0 0 calc( (((100% - 720px)/6)*3) + (3 - 1)*120px); }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .header__description {
+        width: 100%;
+        margin: 0;
+        flex: 0 0 100%; } }
+  .header .menu_logo {
+    display: none; }
+  .header__menu {
+    transition: all 300ms ease-in-out; }
+    .header__menu .menu-button {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 30px;
+      right: 60px;
+      z-index: 1000;
+      cursor: pointer; }
+      @media all and (orientation: portrait), all and (max-width: 900px) {
+        .header__menu .menu-button {
+          right: 30px; } }
+      .header__menu .menu-button span {
+        display: block;
+        width: 26px;
+        height: 4px;
+        margin: 3px 3px 6px 0;
+        background-color: #fff;
+        transition: all 300ms ease-in-out; }
+      .header__menu .menu-button.on span:nth-child(1) {
+        background: #fff;
+        transform-origin: 50% 50%;
+        transform: translateY(10px) rotate(45deg); }
+      .header__menu .menu-button.on span:nth-child(2) {
+        background: #fff;
+        transform-origin: 50% 50%;
+        transform: scaleX(0.01) scaleY(0.01); }
+      .header__menu .menu-button.on span:nth-child(3) {
+        background: #fff;
+        transform-origin: 50% 50%;
+        transform: translateY(-10px) rotate(-45deg); }
+    .header__menu nav {
+      position: absolute;
+      width: 400px;
+      height: 100vh;
+      top: 0;
+      right: 0;
+      padding: 90px;
+      box-sizing: border-box;
+      background: rgba(47, 13, 86, 0);
+      transform-origin: right center;
+      transform: scaleX(0.001);
+      transition: all 300ms ease-in-out; }
+      @media all and (orientation: portrait), all and (max-width: 900px) {
+        .header__menu nav {
+          width: 100%;
+          padding: 0; }
+          .header__menu nav ul {
+            margin: 0 auto; } }
+    .header__menu.on {
+      background: rgba(47, 13, 86, 0.6);
+      z-index: 100;
+      position: fixed;
+      width: 100%;
+      height: 100%; }
+      .header__menu.on nav {
+        transform: scaleX(1);
+        background: #2f0d56;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly; }
+        .header__menu.on nav ul li {
+          list-style: none; }
+          .header__menu.on nav ul li a {
+            font-family: Lato, sans-serif;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 60px;
+            font-size: 36px;
+            text-decoration: none;
+            color: #FFFFFF; }
+            .header__menu.on nav ul li a:hover {
+              color: #DB71B0; }
+
+.header.fixed + * {
+  margin-top: 100vh; }
+
+.item_header.header.fixed + * {
+  margin-top: 600px; }
+
+.header.fixed, .item_header.header.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 200;
+  height: 90px;
+  min-height: 90px;
+  padding-bottom: 0;
+  background: #fff; }
+  .header.fixed .home_header__logo, .header.fixed .description, .header.fixed .header__logo, .header.fixed .header__title, .header.fixed .header__description, .header.fixed .item_header.header__title, .header.fixed .item_header.header__description, .item_header.header.fixed .home_header__logo, .item_header.header.fixed .description, .item_header.header.fixed .header__logo, .item_header.header.fixed .header__title, .item_header.header.fixed .header__description, .item_header.header.fixed .item_header.header__title, .item_header.header.fixed .item_header.header__description {
+    display: none; }
+  .header.fixed .menu_logo, .item_header.header.fixed .menu_logo {
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 60px;
+    z-index: 50; }
+    .header.fixed .menu_logo img, .item_header.header.fixed .menu_logo img {
+      height: 30px; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .header.fixed .menu_logo, .item_header.header.fixed .menu_logo {
+        left: 30px; } }
+  .header.fixed .menu-button span, .item_header.header.fixed .menu-button span {
+    background: linear-gradient(90deg, #394ee5 0%, #db71b0 100%); }
+
+/* Сетка представляеться собой колоночную структуру с фиксированным промежутком.
+   Колонки динамически расширяются до определенного предела (до ширины определенной контейнера).
+   По бокам от крайних колонок существует отступ равен половине промежутка.
+   При маленьком разрешении все колонки становяться одной ширины равной ширике колонки,
+   в таком лучае отступы по бокам равные четверит промежутка.
+   Колонки и контейнер опредедляется параметрически.*/
+.container {
+  margin: 0 auto;
+  max-width: 1500px;
+  padding: 0 0 30px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .container {
+      padding: 0 30px; } }
+
+* {
+  padding: 0;
+  margin: 0; }
+
+body {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 30px;
+  font-size: 16px;
+  color: #000000; }
+
+.page_block {
+  width: 100%;
+  overflow: hidden; }
+
+.title {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 52px;
+  font-size: 36px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000000;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: left; }
+
+.subtitle {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 30px;
+  font-size: 24px;
+  padding-bottom: 30px;
+  text-align: left; }
+
+.description, .texts {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 30px;
+  font-size: 16px;
+  color: #000000;
+  text-align: left;
+  padding-bottom: 30px; }
+
+.form-title {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 52px;
+  font-size: 36px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  padding-top: 60px;
+  padding-bottom: 60px; }
+
+.form-description {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 20px;
+  font-size: 14px;
+  color: #FFFFFF;
+  padding-bottom: 30px; }
+
+.form-button {
+  display: block;
+  width: calc( (((100% - 720px + 120px)/6)*2) + 120px);
+  height: 60px;
+  margin: 0 60px;
+  border: 1px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 60px;
+  font-size: 18px;
+  text-align: center;
+  color: #FFFFFF;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  transition: all 500ms ease-in-out; }
+  .form-button:hover {
+    background: #FFFFFF;
+    color: #394EE5; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .form-button {
+      margin: 30px 0 60px;
+      width: 100%;
+      flex: 0 0 100%; } }
+  .form-button:focus {
+    outline: none; }
+
+.header__title {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  font-size: 96px;
+  color: #FFFFFF;
+  margin-top: 210px; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .header__title {
+      margin-top: 90px;
+      font-size: 3rem; } }
+
+.header__description {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 20px;
+  font-size: 14px;
+  color: #FFFFFF;
+  border-top: 1px solid #ffffff;
+  margin-top: 210px; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .header__description {
+      margin-top: 30px; } }
+  .header__description p {
+    padding-bottom: 20px; }
+
+.invis {
+  visibility: hidden; }
+
+.hidden {
+  display: none; }
+
+.footer {
+  margin-top: 60px; }
+  .footer .container {
+    margin: 0 auto;
+    max-width: 1500px;
+    padding: 0 0 30px;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 0; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .footer .container {
+        padding: 0 30px; } }
+    .footer .container::after {
+      /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -100;
+      background-image: url("../img/figure/figure_7.svg");
+      background-repeat: no-repeat;
+      left: 69.18009%;
+      top: 34.61538%;
+      width: 341px;
+      height: 341px; }
+      @media all and (orientation: portrait), all and (max-width: 900px) {
+        .footer .container::after {
+          opacity: 0.15; } }
+  .footer .address {
+    width: calc( ((100% - 720px)/6) + 120px);
+    flex: 0 0 calc( ((100% - 720px)/6) + 120px); }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .footer .address {
+        width: 100%;
+        flex: 0 0 100%;
+        margin-top: 30px; } }
+    .footer .address__name {
+      font-family: Lato, sans-serif;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 30px;
+      font-size: 24px;
+      padding-bottom: 30px;
+      text-align: left; }
+    .footer .address__value {
+      font-family: Lato, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 20px;
+      font-size: 14px;
+      color: #000000;
+      text-align: left;
+      padding-bottom: 15px; }
+    .footer .address:first-child {
+      margin-left: 60px; }
+      @media all and (orientation: portrait), all and (max-width: 900px) {
+        .footer .address:first-child {
+          margin-left: 0; } }
+  .footer .contacts {
+    /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *3 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (3 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+    width: calc( (((100% - 720px)/6)*3) + (3 - 1)*120px);
+    margin: 0 60px;
+    flex: 0 0 calc( (((100% - 720px)/6)*3) + (3 - 1)*120px);
+    margin-left: calc( (((100% - 720px)/6)*falce) + (falce + 0.5)*120px);
+    margin: 0; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .footer .contacts {
+        width: 100%;
+        margin: 0;
+        flex: 0 0 100%; } }
+    .footer .contacts .description {
+      font-family: Lato, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 20px;
+      font-size: 14px;
+      color: #000000;
+      text-align: left;
+      padding-bottom: 15px; }
+    .footer .contacts__phone, .footer .contacts__email {
+      display: block;
+      padding-bottom: 15px;
+      font-family: Lato, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 30px;
+      font-size: 18px;
+      color: #000000;
+      text-decoration: none; }
+      .footer .contacts__phone:hover, .footer .contacts__email:hover {
+        text-decoration: underline; }
+  .footer__copyright {
+    /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *6 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (6 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+    width: calc( (((100% - 720px)/6)*6) + (6 - 1)*120px);
+    margin: 0 60px;
+    flex: 0 0 calc( (((100% - 720px)/6)*6) + (6 - 1)*120px);
+    border-top: 1px #000000 solid;
+    padding-top: 15px;
+    padding-bottom: 0;
+    margin-top: 15px;
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 20px;
+    font-size: 14px;
+    color: #000000;
+    text-align: left;
+    padding-bottom: 15px; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .footer__copyright {
+        width: 100%;
+        margin: 0;
+        flex: 0 0 100%; } }
+
+.seo-text {
+  margin-top: 60px; }
+  .seo-text .container:before {
+    /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -100;
+    background-image: url("../img/figure/figure_14.svg");
+    background-repeat: no-repeat;
+    left: 86.82284%;
+    top: 74%;
+    width: 261px;
+    height: 100px; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .seo-text .container:before {
+        opacity: 0.15; } }
+  .seo-text .container p {
+    /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *6 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (6 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+    width: calc( (((100% - 720px)/6)*6) + (6 - 1)*120px);
+    margin: 0 60px;
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 30px;
+    font-size: 16px;
+    color: #000000;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+    padding-top: 30px; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .seo-text .container p {
+        width: 100%;
+        margin: 0;
+        flex: 0 0 100%; } }
+
+.home_header {
+  background-image: url(../img/home_header.svg); }
+  .home_header__logo {
+    max-width: 60%;
+    position: absolute;
+    top: 4.39239vh;
+    left: 4.39239vw; }
+  .home_header .description {
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+    font-size: 18px;
+    color: #FFFFFF;
+    text-shadow: none;
+    position: absolute;
+    left: 3.95315vw;
+    bottom: 10.10249vh;
+    /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *3 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (3 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+    width: calc( (((100% - 720px)/6)*3) + (3 - 1)*120px);
+    margin: 0 60px; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .home_header .description {
+        width: 100%;
+        margin: 0;
+        flex: 0 0 100%; } }
+
+.products_header {
+  background-image: url(../img/products_header.svg); }
+
+.expertise_header {
+  background-image: url(../img/expertise_header.svg); }
+
+.about-us_header {
+  background-image: url(../img/about-us_header.svg); }
+
+.contacts_header {
+  background-image: url(../img/contacts_header.svg); }
+  .contacts_header .contacts__phone, .contacts_header .contacts__email {
+    display: block;
+    padding-bottom: 15px;
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 30px;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none; }
+    .contacts_header .contacts__phone:hover, .contacts_header .contacts__email:hover {
+      text-decoration: underline; }
+
+.products-item_header {
+  background-image: url(../img/products-item_header.svg); }
+
+.expertise-item_header {
+  background-image: url(../img/expertise-item_header.svg); }
+
+.form-expertise {
+  background-image: url(../img/form_1_background.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%; }
+  .form-expertise .container {
+    margin: 0 auto;
+    max-width: 1500px;
+    padding: 0 0 30px;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .form-expertise .container {
+        padding: 0 30px; } }
+  .form-expertise .form-title {
+    /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *6 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (6 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+    width: calc( (((100% - 720px)/6)*6) + (6 - 1)*120px);
+    margin: 0 60px;
+    flex: 0 0 calc( (((100% - 720px)/6)*6) + (6 - 1)*120px); }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .form-expertise .form-title {
+        width: 100%;
+        margin: 0;
+        flex: 0 0 100%; } }
+  .form-expertise .form-description {
+    /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *2 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (2 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+    width: calc( (((100% - 720px)/6)*2) + (2 - 1)*120px);
+    margin: 0 60px;
+    flex: 0 0 calc( (((100% - 720px)/6)*2) + (2 - 1)*120px);
+    margin-left: calc( (((100% - 720px)/6)*1) + (1 + 0.5)*120px); }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .form-expertise .form-description {
+        width: 100%;
+        margin: 0;
+        flex: 0 0 100%; } }
+
+.form-ddd {
+  background-image: url(../img/form_2_background.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%; }
+  .form-ddd .container {
+    margin: 0 auto;
+    max-width: 1500px;
+    padding: 0 0 30px;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .form-ddd .container {
+        padding: 0 30px; } }
+  .form-ddd .form-title {
+    /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *4 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (4 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+    width: calc( (((100% - 720px)/6)*4) + (4 - 1)*120px);
+    margin: 0 60px;
+    flex: 0 0 calc( (((100% - 720px)/6)*4) + (4 - 1)*120px);
+    margin-left: calc( (((100% - 720px)/6)*1) + (1 + 0.5)*120px); }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .form-ddd .form-title {
+        width: 100%;
+        margin: 0;
+        flex: 0 0 100%; } }
+  .form-ddd .form-description {
+    /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *2 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (2 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+    width: calc( (((100% - 720px)/6)*2) + (2 - 1)*120px);
+    margin: 0 60px;
+    flex: 0 0 calc( (((100% - 720px)/6)*2) + (2 - 1)*120px);
+    margin-left: calc( (((100% - 720px)/6)*1) + (1 + 0.5)*120px); }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .form-ddd .form-description {
+        width: 100%;
+        margin: 0;
+        flex: 0 0 100%; } }
+  .form-ddd .form {
+    /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *2 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (2 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+    width: calc( (((100% - 720px)/6)*2) + (2 - 1)*120px);
+    margin: 0 60px;
+    flex: 0 0 calc( (((100% - 720px)/6)*2) + (2 - 1)*120px);
+    margin-bottom: 30px; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .form-ddd .form {
+        width: 100%;
+        margin: 0;
+        flex: 0 0 100%; } }
+    .form-ddd .form input {
+      width: 100%;
+      height: 30px;
+      margin-bottom: 30px;
+      border: none;
+      border-bottom: 1px #ffffff solid;
+      background: transparent;
+      font-family: Lato, sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 30px;
+      font-size: 18px;
+      color: #fff; }
+      .form-ddd .form input:focus {
+        outline: none; }
+        .form-ddd .form input:focus::-webkit-input-placeholder {
+          color: rgba(255, 255, 255, 0.1); }
+        .form-ddd .form input:focus::-moz-placeholder {
+          color: rgba(255, 255, 255, 0.1); }
+        .form-ddd .form input:focus:-moz-placeholder {
+          color: rgba(255, 255, 255, 0.1); }
+        .form-ddd .form input:focus:-ms-input-placeholder {
+          color: rgba(255, 255, 255, 0.1); }
+      .form-ddd .form input::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0.5); }
+      .form-ddd .form input::-moz-placeholder {
+        color: rgba(255, 255, 255, 0.5); }
+      .form-ddd .form input:-moz-placeholder {
+        color: rgba(255, 255, 255, 0.5); }
+      .form-ddd .form input:-ms-input-placeholder {
+        color: rgba(255, 255, 255, 0.5); }
+    .form-ddd .form .form-button {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0; }
+
+.form-project {
+  background-image: url(../img/form_3_background.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%; }
+  .form-project .container {
+    margin: 0 auto;
+    max-width: 1500px;
+    padding: 0 0 30px;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .form-project .container {
+        padding: 0 30px; } }
+  .form-project .form-title {
+    /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *6 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (6 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+    width: calc( (((100% - 720px)/6)*6) + (6 - 1)*120px);
+    margin: 0 60px; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .form-project .form-title {
+        width: 100%;
+        margin: 0;
+        flex: 0 0 100%; } }
+  .form-project .form-description {
+    /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *4 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (4 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+    width: calc( (((100% - 720px)/6)*4) + (4 - 1)*120px);
+    margin: 0 60px;
+    margin-left: calc( (((100% - 720px)/6)*1) + (1 + 0.5)*120px); }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .form-project .form-description {
+        width: 100%;
+        margin: 0;
+        flex: 0 0 100%; } }
+  .form-project .form {
+    margin: 0 auto;
+    max-width: 1500px;
+    padding: 0 0 30px;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-bottom: 30px; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .form-project .form {
+        padding: 0 30px; } }
+    .form-project .form__left {
+      /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *2 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (2 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+      width: calc( (((100% - 720px)/6)*2) + (2 - 1)*120px);
+      margin: 0 60px;
+      flex: 0 0 calc( (((100% - 720px)/6)*2) + (2 - 1)*120px);
+      margin-left: calc( (((100% - 720px)/6)*1) + (1 + 0.5)*120px); }
+      @media all and (orientation: portrait), all and (max-width: 900px) {
+        .form-project .form__left {
+          width: 100%;
+          margin: 0;
+          flex: 0 0 100%; } }
+      .form-project .form__left input {
+        width: 100%;
+        height: 30px;
+        margin-bottom: 30px;
+        border: none;
+        border-bottom: 1px #ffffff solid;
+        background: transparent;
+        font-family: Lato, sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 30px;
+        font-size: 18px;
+        color: #fff; }
+        .form-project .form__left input:focus {
+          outline: none; }
+          .form-project .form__left input:focus::-webkit-input-placeholder {
+            color: rgba(255, 255, 255, 0.1); }
+          .form-project .form__left input:focus::-moz-placeholder {
+            color: rgba(255, 255, 255, 0.1); }
+          .form-project .form__left input:focus:-moz-placeholder {
+            color: rgba(255, 255, 255, 0.1); }
+          .form-project .form__left input:focus:-ms-input-placeholder {
+            color: rgba(255, 255, 255, 0.1); }
+        .form-project .form__left input::-webkit-input-placeholder {
+          color: rgba(255, 255, 255, 0.5); }
+        .form-project .form__left input::-moz-placeholder {
+          color: rgba(255, 255, 255, 0.5); }
+        .form-project .form__left input:-moz-placeholder {
+          color: rgba(255, 255, 255, 0.5); }
+        .form-project .form__left input:-ms-input-placeholder {
+          color: rgba(255, 255, 255, 0.5); }
+    .form-project .form__right {
+      /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *2 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (2 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+      width: calc( (((100% - 720px)/6)*2) + (2 - 1)*120px);
+      margin: 0 60px;
+      flex: 0 0 calc( (((100% - 720px)/6)*2) + (2 - 1)*120px); }
+      @media all and (orientation: portrait), all and (max-width: 900px) {
+        .form-project .form__right {
+          width: 100%;
+          margin: 0;
+          flex: 0 0 100%; } }
+      .form-project .form__right textarea {
+        width: 100%;
+        height: 150px;
+        margin-bottom: 30px;
+        resize: none;
+        overflow: hidden;
+        border: none;
+        border-bottom: 1px #ffffff solid;
+        background-color: transparent;
+        background-image: repeating-linear-gradient(rgba(255, 255, 255, 0) 0px, rgba(255, 255, 255, 0) 29px, #fff 29px, #fff 30px);
+        font-family: Lato, sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 30px;
+        font-size: 18px;
+        color: #fff; }
+        .form-project .form__right textarea:focus {
+          outline: none; }
+          .form-project .form__right textarea:focus::-webkit-input-placeholder {
+            color: rgba(255, 255, 255, 0.1); }
+          .form-project .form__right textarea:focus::-moz-placeholder {
+            color: rgba(255, 255, 255, 0.1); }
+          .form-project .form__right textarea:focus:-moz-placeholder {
+            color: rgba(255, 255, 255, 0.1); }
+          .form-project .form__right textarea:focus:-ms-input-placeholder {
+            color: rgba(255, 255, 255, 0.1); }
+        .form-project .form__right textarea::-webkit-input-placeholder {
+          color: rgba(255, 255, 255, 0.5); }
+        .form-project .form__right textarea::-moz-placeholder {
+          color: rgba(255, 255, 255, 0.5); }
+        .form-project .form__right textarea:-moz-placeholder {
+          color: rgba(255, 255, 255, 0.5); }
+        .form-project .form__right textarea:-ms-input-placeholder {
+          color: rgba(255, 255, 255, 0.5); }
+    .form-project .form .form-button {
+      /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *2 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (2 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+      width: calc( (((100% - 720px)/6)*2) + (2 - 1)*120px);
+      margin: 0 60px;
+      flex: 0 0 calc( (((100% - 720px)/6)*2) + (2 - 1)*120px);
+      margin-left: calc( (((100% - 720px)/6)*2) + (2 + 0.5)*120px);
+      margin-top: 60px; }
+      @media all and (orientation: portrait), all and (max-width: 900px) {
+        .form-project .form .form-button {
+          width: 100%;
+          margin: 0;
+          flex: 0 0 100%; } }
+      @media all and (orientation: portrait), all and (max-width: 900px) {
+        .form-project .form .form-button {
+          width: calc( (((100% - 720px + 120px)/6)*2) + 120px);
+          max-width: 300px;
+          margin: 30px auto 60px; } }
+
+.info-us .container::before {
+  /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -100;
+  background-image: url("../img/figure/figure_1.svg");
+  background-repeat: no-repeat;
+  left: -30.38067%;
+  top: 15.70248%;
+  width: 859px;
+  height: 618px; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .info-us .container::before {
+      opacity: 0.15; } }
+
+.info-us .title {
+  /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *4 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (4 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+  width: calc( (((100% - 720px)/6)*4) + (4 - 1)*120px);
+  margin: 0 60px;
+  margin-left: calc( (((100% - 720px)/6)*2) + (2 + 0.5)*120px); }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .info-us .title {
+      width: 100%;
+      margin: 0;
+      flex: 0 0 100%; } }
+
+.info-us .description {
+  /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *4 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (4 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+  width: calc( (((100% - 720px)/6)*4) + (4 - 1)*120px);
+  margin: 0 60px;
+  margin-left: calc( (((100% - 720px)/6)*2) + (2 + 0.5)*120px); }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .info-us .description {
+      width: 100%;
+      margin: 0;
+      flex: 0 0 100%; } }
+
+.info-servise .text-box:nth-child(2)::before {
+  /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -100;
+  background-image: url("../img/figure/figure_2.svg");
+  background-repeat: no-repeat;
+  left: 64.56808%;
+  top: -10.3125%;
+  width: 746px;
+  height: 540px; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .info-servise .text-box:nth-child(2)::before {
+      opacity: 0.15; } }
+
+.info-servise .text-box:nth-child(3)::before {
+  /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -100;
+  background-image: url("../img/figure/figure_3.svg");
+  background-repeat: no-repeat;
+  left: -42.24012%;
+  top: 31.40625%;
+  width: 917px;
+  height: 448px; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .info-servise .text-box:nth-child(3)::before {
+      opacity: 0.15; } }
+
+.info-servise .text-box:nth-child(4)::before {
+  /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -100;
+  background-image: url("../img/figure/figure_4.svg");
+  background-repeat: no-repeat;
+  left: 75.91508%;
+  top: 57.34375%;
+  width: 621px;
+  height: 467px; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .info-servise .text-box:nth-child(4)::before {
+      opacity: 0.15; } }
+
+.info-servise .title {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 52px;
+  font-size: 36px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000000;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center; }
+
+.info-servise .text-box {
+  padding-bottom: 60px; }
+  .info-servise .text-box:nth-child(odd) {
+    /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *3 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (3 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+    width: calc( (((100% - 720px)/6)*3) + (3 - 1)*120px);
+    margin: 0 60px;
+    margin-left: calc( (((100% - 720px)/6)*3) + (3 + 0.5)*120px); }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .info-servise .text-box:nth-child(odd) {
+        width: 100%;
+        margin: 0;
+        flex: 0 0 100%; } }
+  .info-servise .text-box:nth-child(even) {
+    /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *3 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (3 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+    width: calc( (((100% - 720px)/6)*3) + (3 - 1)*120px);
+    margin: 0 60px; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .info-servise .text-box:nth-child(even) {
+        width: 100%;
+        margin: 0;
+        flex: 0 0 100%; } }
+
+.info-offer .container {
+  margin: 0 auto;
+  max-width: 1500px;
+  padding: 0 0 30px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .info-offer .container {
+      padding: 0 30px; } }
+  .info-offer .container:before {
+    /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -100;
+    background-image: url("../img/figure/figure_5.svg");
+    background-repeat: no-repeat;
+    left: 87.92094%;
+    top: 1.53374%;
+    width: 347px;
+    height: 229px; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .info-offer .container:before {
+        opacity: 0.15; } }
+  .info-offer .container:after {
+    /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -100;
+    background-image: url("../img/figure/figure_6.svg");
+    background-repeat: no-repeat;
+    left: 63.6896%;
+    top: 72.39264%;
+    width: 72px;
+    height: 33px; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .info-offer .container:after {
+        opacity: 0.15; } }
+
+.info-offer .title {
+  /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *6 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (6 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+  width: calc( (((100% - 720px)/6)*6) + (6 - 1)*120px);
+  margin: 0 60px;
+  flex: 0 0 calc( (((100% - 720px)/6)*6) + (6 - 1)*120px); }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .info-offer .title {
+      width: 100%;
+      margin: 0;
+      flex: 0 0 100%; } }
+
+.info-offer .subtitle {
+  /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *6 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (6 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+  width: calc( (((100% - 720px)/6)*6) + (6 - 1)*120px);
+  margin: 0 60px;
+  flex: 0 0 calc( (((100% - 720px)/6)*6) + (6 - 1)*120px); }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .info-offer .subtitle {
+      width: 100%;
+      margin: 0;
+      flex: 0 0 100%; } }
+
+.info-offer .list {
+  /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *4 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (4 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+  width: calc( (((100% - 720px)/6)*4) + (4 - 1)*120px);
+  margin: 0 60px;
+  flex: 0 0 calc( (((100% - 720px)/6)*4) + (4 - 1)*120px);
+  column-count: 2;
+  column-gap: 120px;
+  padding-bottom: 30px; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .info-offer .list {
+      width: 100%;
+      margin: 0;
+      flex: 0 0 100%; } }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .info-offer .list {
+      column-count: 1;
+      column-gap: 0;
+      vertical-align: top; } }
+  .info-offer .list li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 20px;
+    font-size: 14px;
+    color: #000000;
+    padding-bottom: 15px; }
+
+.info-offer .description {
+  /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *2 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (2 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+  width: calc( (((100% - 720px)/6)*2) + (2 - 1)*120px);
+  margin: 0 60px;
+  flex: 0 0 calc( (((100% - 720px)/6)*2) + (2 - 1)*120px);
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 20px;
+  font-size: 14px;
+  color: #000000;
+  text-align: left;
+  padding-bottom: 15px;
+  padding-bottom: 60px; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .info-offer .description {
+      width: 100%;
+      margin: 0;
+      flex: 0 0 100%; } }
+
+.products ul {
+  margin: 0 auto;
+  max-width: 1500px;
+  padding: 0 0 30px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 90px; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .products ul {
+      padding: 0 30px; } }
+  .products ul::before {
+    /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -100;
+    background-image: url("../img/figure/figure_9.svg");
+    background-repeat: no-repeat;
+    left: 87.70132%;
+    top: 20.57682%;
+    width: 233px;
+    height: 66px; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .products ul::before {
+        opacity: 0.15; } }
+  .products ul::after {
+    /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -100;
+    background-image: url("../img/figure/figure_10.svg");
+    background-repeat: no-repeat;
+    left: -4.97804%;
+    top: 68.77427%;
+    width: 376px;
+    height: 324px; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .products ul::after {
+        opacity: 0.15; } }
+  .products ul li {
+    /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *3 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (3 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+    width: calc( (((100% - 720px)/6)*3) + (3 - 1)*120px);
+    margin: 0 60px;
+    flex: 0 0 calc( (((100% - 720px)/6)*3) + (3 - 1)*120px);
+    list-style: none; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .products ul li {
+        width: 100%;
+        margin: 0;
+        flex: 0 0 100%; } }
+    .products ul li:nth-child(1)::before {
+      /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -100;
+      background-image: url("../img/figure/figure_8.svg");
+      background-repeat: no-repeat;
+      left: 44.72914%;
+      top: 10.03882%;
+      width: 72px;
+      height: 33px; }
+      @media all and (orientation: portrait), all and (max-width: 900px) {
+        .products ul li:nth-child(1)::before {
+          opacity: 0.15; } }
+    .products ul li a {
+      display: block;
+      border-top: 1px solid #000;
+      margin-bottom: 90px;
+      text-decoration: none;
+      color: #000; }
+      @media all and (orientation: portrait), all and (max-width: 900px) {
+        .products ul li a {
+          text-decoration-skip: ink;
+          text-decoration: underline;
+          text-decoration-style: dotted;
+          text-decoration-color: #394ee5; } }
+      .products ul li a:hover {
+        border-top: 1px solid transparent;
+        -moz-border-image: -moz-linear-gradient(90deg, #394ee5 0%, #db71b0 100%);
+        -webkit-border-image: -webkit-linear-gradient(90deg, #394ee5 0%, #db71b0 100%);
+        border-image: linear-gradient(90deg, #394ee5 0%, #db71b0 100%);
+        border-image-slice: 1;
+        background: linear-gradient(90deg, #394ee5 0%, #db71b0 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; }
+      .products ul li a h3 {
+        font-family: Lato, sans-serif;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 30px;
+        font-size: 24px;
+        padding-bottom: 30px;
+        text-align: left; }
+      .products ul li a p {
+        font-family: Lato, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 20px;
+        font-size: 14px;
+        color: #000000;
+        text-align: left;
+        padding-bottom: 15px; }
+
+.expertise ul {
+  margin: 0 auto;
+  max-width: 1500px;
+  padding: 0 0 30px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 90px; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .expertise ul {
+      padding: 0 30px; } }
+  .expertise ul::before {
+    /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -100;
+    background-image: url("../img/figure/figure_15.svg");
+    background-repeat: no-repeat;
+    left: -11.71303%;
+    top: 8.58779%;
+    width: 552px;
+    height: 552px; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .expertise ul::before {
+        opacity: 0.15; } }
+  .expertise ul::after {
+    /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -100;
+    background-image: url("../img/figure/figure_17.svg");
+    background-repeat: no-repeat;
+    left: 0%;
+    top: 82.25191%;
+    width: 282px;
+    height: 233px; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .expertise ul::after {
+        opacity: 0.15; } }
+  .expertise ul li {
+    /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *4 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (4 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+    width: calc( (((100% - 720px)/6)*4) + (4 - 1)*120px);
+    margin: 0 60px;
+    margin-left: calc( (((100% - 720px)/6)*2) + (2 + 0.5)*120px);
+    list-style: none; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .expertise ul li {
+        width: 100%;
+        margin: 0;
+        flex: 0 0 100%; } }
+    .expertise ul li:nth-child(1)::before {
+      /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -100;
+      background-image: url("../img/figure/figure_16.svg");
+      background-repeat: no-repeat;
+      left: -23.20644%;
+      top: 52.16285%;
+      width: 482px;
+      height: 265px; }
+      @media all and (orientation: portrait), all and (max-width: 900px) {
+        .expertise ul li:nth-child(1)::before {
+          opacity: 0.15; } }
+    .expertise ul li a {
+      display: block;
+      border-top: 1px solid #000;
+      margin-bottom: 90px;
+      text-decoration: none;
+      color: #000; }
+      @media all and (orientation: portrait), all and (max-width: 900px) {
+        .expertise ul li a {
+          text-decoration-skip: ink;
+          text-decoration: underline;
+          text-decoration-style: dotted;
+          text-decoration-color: #394ee5; } }
+      .expertise ul li a:hover {
+        border-top: 1px solid transparent;
+        -moz-border-image: -moz-linear-gradient(90deg, #394ee5 0%, #db71b0 100%);
+        -webkit-border-image: -webkit-linear-gradient(90deg, #394ee5 0%, #db71b0 100%);
+        border-image: linear-gradient(90deg, #394ee5 0%, #db71b0 100%);
+        border-image-slice: 1;
+        background: linear-gradient(90deg, #394ee5 0%, #db71b0 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; }
+      .expertise ul li a h3 {
+        font-family: Lato, sans-serif;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 30px;
+        font-size: 24px;
+        padding-bottom: 30px;
+        text-align: left; }
+      .expertise ul li a p {
+        font-family: Lato, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 20px;
+        font-size: 14px;
+        color: #000000;
+        text-align: left;
+        padding-bottom: 15px; }
+
+.values ul {
+  margin: 0 auto;
+  max-width: 1500px;
+  padding: 0 0 30px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 90px; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .values ul {
+      padding: 0 30px; } }
+  .values ul:before {
+    /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -100;
+    background-image: url("../img/figure/figure_1.svg");
+    background-repeat: no-repeat;
+    left: -40.99561%;
+    top: 13.41463%;
+    width: 859px;
+    height: 618px; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .values ul:before {
+        opacity: 0.15; } }
+  .values ul li {
+    /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *4 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (4 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+    width: calc( (((100% - 720px)/6)*4) + (4 - 1)*120px);
+    margin: 0 60px;
+    margin-left: calc( (((100% - 720px)/6)*2) + (2 + 0.5)*120px);
+    list-style: none;
+    display: block;
+    border-top: 1px solid #000;
+    padding-bottom: 90px;
+    text-decoration: none;
+    color: #000; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .values ul li {
+        width: 100%;
+        margin: 0;
+        flex: 0 0 100%; } }
+    .values ul li h3 {
+      font-family: Lato, sans-serif;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 30px;
+      font-size: 24px;
+      padding-bottom: 30px;
+      text-align: left; }
+    .values ul li p {
+      font-family: Lato, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 20px;
+      font-size: 14px;
+      color: #000000;
+      text-align: left;
+      padding-bottom: 15px; }
+
+.our-team .container:before {
+  /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -100;
+  background-image: url("../img/figure/figure_2.svg");
+  background-repeat: no-repeat;
+  left: 75.32943%;
+  top: -0.72464%;
+  width: 746px;
+  height: 540px; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .our-team .container:before {
+      opacity: 0.15; } }
+
+.our-team .title {
+  /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *4 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (4 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+  width: calc( (((100% - 720px)/6)*4) + (4 - 1)*120px);
+  margin: 0 60px; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .our-team .title {
+      width: 100%;
+      margin: 0;
+      flex: 0 0 100%; } }
+
+.our-team .description {
+  /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *4 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (4 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+  width: calc( (((100% - 720px)/6)*4) + (4 - 1)*120px);
+  margin: 0 60px; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .our-team .description {
+      width: 100%;
+      margin: 0;
+      flex: 0 0 100%; } }
+
+.working-with-us .container:before {
+  /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -100;
+  background-image: url("../img/figure/figure_17.svg");
+  background-repeat: no-repeat;
+  left: -2.56223%;
+  top: 16.12903%;
+  width: 282px;
+  height: 233px; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .working-with-us .container:before {
+      opacity: 0.15; } }
+
+.working-with-us .title {
+  /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *4 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (4 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+  width: calc( (((100% - 720px)/6)*4) + (4 - 1)*120px);
+  margin: 0 60px;
+  margin-left: calc( (((100% - 720px)/6)*2) + (2 + 0.5)*120px); }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .working-with-us .title {
+      width: 100%;
+      margin: 0;
+      flex: 0 0 100%; } }
+
+.working-with-us .description {
+  /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *4 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (4 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+  width: calc( (((100% - 720px)/6)*4) + (4 - 1)*120px);
+  margin: 0 60px;
+  margin-left: calc( (((100% - 720px)/6)*2) + (2 + 0.5)*120px); }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .working-with-us .description {
+      width: 100%;
+      margin: 0;
+      flex: 0 0 100%; } }
+
+.triggers ul {
+  margin: 0 auto;
+  max-width: 1500px;
+  padding: 0 0 30px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 90px; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .triggers ul {
+      padding: 0 30px; } }
+  .triggers ul:before {
+    /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -100;
+    background-image: url("../img/figure/figure_6.svg");
+    background-repeat: no-repeat;
+    left: 65.37335%;
+    top: 66.66667%;
+    width: 72px;
+    height: 33px; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .triggers ul:before {
+        opacity: 0.15; } }
+  .triggers ul:after {
+    /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -100;
+    background-image: url("../img/figure/figure_5.svg");
+    background-repeat: no-repeat;
+    left: 86.60322%;
+    top: 34.22222%;
+    width: 347px;
+    height: 229px; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .triggers ul:after {
+        opacity: 0.15; } }
+  .triggers ul li {
+    /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *2 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (2 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+    width: calc( (((100% - 720px)/6)*2) + (2 - 1)*120px);
+    margin: 0 60px;
+    flex: 0 0 calc( (((100% - 720px)/6)*2) + (2 - 1)*120px);
+    list-style: none;
+    display: block;
+    border-top: 1px solid #000;
+    padding-bottom: 90px;
+    text-decoration: none;
+    color: #000; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .triggers ul li {
+        width: 100%;
+        margin: 0;
+        flex: 0 0 100%; } }
+    .triggers ul li h3 {
+      font-family: Lato, sans-serif;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 30px;
+      font-size: 24px;
+      padding-bottom: 30px;
+      text-align: left; }
+    .triggers ul li p {
+      font-family: Lato, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 20px;
+      font-size: 14px;
+      color: #000000;
+      text-align: left;
+      padding-bottom: 15px; }
+    .triggers ul li ul {
+      display: block;
+      margin: 0; }
+      .triggers ul li ul::before, .triggers ul li ul::after {
+        display: none; }
+      .triggers ul li ul li {
+        font-family: Lato, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 20px;
+        font-size: 14px;
+        color: #000000;
+        text-align: left;
+        padding-bottom: 15px;
+        width: 100%;
+        padding-bottom: 5px;
+        margin-left: 25px;
+        margin-bottom: 0;
+        border: none; }
+        .triggers ul li ul li::before {
+          content: "—";
+          margin-right: 5px;
+          margin-left: -20px; }
+
+.maps {
+  background: gray;
+  display: flex;
+  flex-wrap: wrap; }
+  .maps__block {
+    width: 50%;
+    min-width: 500px;
+    flex: 1 1 50%;
+    height: 500px;
+    padding-top: 135px;
+    padding-left: 20%;
+    box-sizing: border-box;
+    border: 1px solid #000; }
+
+.item_why-us .container:before {
+  /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -100;
+  background-image: url("../img/figure/figure_10.svg");
+  background-repeat: no-repeat;
+  left: 8.85798%;
+  top: 21.90476%;
+  width: 376px;
+  height: 324px; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .item_why-us .container:before {
+      opacity: 0.15; } }
+
+.item_why-us .title {
+  /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *3 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (3 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+  width: calc( (((100% - 720px)/6)*3) + (3 - 1)*120px);
+  margin: 0 60px;
+  margin-left: calc( (((100% - 720px)/6)*3) + (3 + 0.5)*120px); }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .item_why-us .title {
+      width: 100%;
+      margin: 0;
+      flex: 0 0 100%; } }
+
+.item_why-us .description {
+  /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *3 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (3 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+  width: calc( (((100% - 720px)/6)*3) + (3 - 1)*120px);
+  margin: 0 60px;
+  margin-left: calc( (((100% - 720px)/6)*3) + (3 + 0.5)*120px); }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .item_why-us .description {
+      width: 100%;
+      margin: 0;
+      flex: 0 0 100%; } }
+
+.item_it-works ul {
+  margin: 0 auto;
+  max-width: 1500px;
+  padding: 0 0 30px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-bottom: 0; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .item_it-works ul {
+      padding: 0 30px; } }
+  .item_it-works ul:before {
+    /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -100;
+    background-image: url("../img/figure/figure_11.svg");
+    background-repeat: no-repeat;
+    left: -2.56223%;
+    top: 4.58333%;
+    width: 208px;
+    height: 66px; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .item_it-works ul:before {
+        opacity: 0.15; } }
+  .item_it-works ul:after {
+    /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -100;
+    background-image: url("../img/figure/figure_9.svg");
+    background-repeat: no-repeat;
+    left: 89.31186%;
+    top: 30.83333%;
+    width: 233px;
+    height: 66px; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .item_it-works ul:after {
+        opacity: 0.15; } }
+  .item_it-works ul .title {
+    /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *6 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (6 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+    width: calc( (((100% - 720px)/6)*6) + (6 - 1)*120px);
+    margin: 0 60px;
+    flex: 0 0 calc( (((100% - 720px)/6)*6) + (6 - 1)*120px);
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 52px;
+    font-size: 36px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #000000;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    text-align: center; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .item_it-works ul .title {
+        width: 100%;
+        margin: 0;
+        flex: 0 0 100%; } }
+  .item_it-works ul li {
+    /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *3 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (3 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+    width: calc( (((100% - 720px)/6)*3) + (3 - 1)*120px);
+    margin: 0 60px;
+    flex: 0 0 calc( (((100% - 720px)/6)*3) + (3 - 1)*120px);
+    list-style: none;
+    display: block;
+    border-top: 1px solid #000;
+    padding-bottom: 90px;
+    text-decoration: none;
+    color: #000; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .item_it-works ul li {
+        width: 100%;
+        margin: 0;
+        flex: 0 0 100%; } }
+    .item_it-works ul li h3 {
+      font-family: Lato, sans-serif;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 30px;
+      font-size: 24px;
+      padding-bottom: 30px;
+      text-align: left; }
+    .item_it-works ul li p {
+      font-family: Lato, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 20px;
+      font-size: 14px;
+      color: #000000;
+      text-align: left;
+      padding-bottom: 15px; }
+
+.solution .container {
+  margin: 0 auto;
+  max-width: 1500px;
+  padding: 0 0 30px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .solution .container {
+      padding: 0 30px; } }
+  .solution .container:before {
+    /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -100;
+    background-image: url("../img/figure/figure_12.svg");
+    background-repeat: no-repeat;
+    left: 83.30893%;
+    top: 3.15789%;
+    width: 261px;
+    height: 100px; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .solution .container:before {
+        opacity: 0.15; } }
+  .solution .container:after {
+    /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -100;
+    background-image: url("../img/figure/figure_13.svg");
+    background-repeat: no-repeat;
+    left: -49.12152%;
+    top: 36.65072%;
+    width: 995px;
+    height: 506px; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .solution .container:after {
+        opacity: 0.15; } }
+
+.solution .title {
+  /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *6 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (6 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+  width: calc( (((100% - 720px)/6)*6) + (6 - 1)*120px);
+  margin: 0 60px;
+  flex: 0 0 calc( (((100% - 720px)/6)*6) + (6 - 1)*120px);
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 52px;
+  font-size: 36px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000000;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .solution .title {
+      width: 100%;
+      margin: 0;
+      flex: 0 0 100%; } }
+
+.solution .description {
+  /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *3 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (3 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+  width: calc( (((100% - 720px)/6)*3) + (3 - 1)*120px);
+  margin: 0 60px;
+  flex: 0 0 calc( (((100% - 720px)/6)*3) + (3 - 1)*120px); }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .solution .description {
+      width: 100%;
+      margin: 0;
+      flex: 0 0 100%; } }
+
+.solution .list {
+  /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *3 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (3 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+  width: calc( (((100% - 720px)/6)*3) + (3 - 1)*120px);
+  margin: 0 60px;
+  flex: 0 0 calc( (((100% - 720px)/6)*3) + (3 - 1)*120px); }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .solution .list {
+      width: 100%;
+      margin: 0;
+      flex: 0 0 100%; } }
+  .solution .list li {
+    list-style: none;
+    display: block;
+    border-top: 1px solid #000;
+    margin-bottom: 60px;
+    text-decoration: none;
+    color: #000; }
+    .solution .list li h3 {
+      font-family: Lato, sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      line-height: normal;
+      font-size: 18px;
+      color: #000000; }
+
+.receive .container {
+  margin: 0 auto;
+  max-width: 1500px;
+  padding: 0 0 30px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .receive .container {
+      padding: 0 30px; } }
+  .receive .container:before {
+    /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -100;
+    background-image: url("../img/figure/figure_5.svg");
+    background-repeat: no-repeat;
+    left: 87.92094%;
+    top: 1.53374%;
+    width: 347px;
+    height: 229px; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .receive .container:before {
+        opacity: 0.15; } }
+  .receive .container:after {
+    /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -100;
+    background-image: url("../img/figure/figure_6.svg");
+    background-repeat: no-repeat;
+    left: 63.6896%;
+    top: 72.39264%;
+    width: 72px;
+    height: 33px; }
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+      .receive .container:after {
+        opacity: 0.15; } }
+
+.receive .title {
+  /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *6 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (6 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+  width: calc( (((100% - 720px)/6)*6) + (6 - 1)*120px);
+  margin: 0 60px;
+  flex: 0 0 calc( (((100% - 720px)/6)*6) + (6 - 1)*120px);
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 52px;
+  font-size: 36px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000000;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .receive .title {
+      width: 100%;
+      margin: 0;
+      flex: 0 0 100%; } }
+
+.receive .list {
+  /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *4 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (4 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+  width: calc( (((100% - 720px)/6)*4) + (4 - 1)*120px);
+  margin: 0 60px;
+  flex: 0 0 calc( (((100% - 720px)/6)*4) + (4 - 1)*120px);
+  column-count: 2;
+  column-gap: 120px;
+  padding-bottom: 30px; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .receive .list {
+      width: 100%;
+      margin: 0;
+      flex: 0 0 100%; } }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .receive .list {
+      column-count: 1;
+      column-gap: 0;
+      vertical-align: top; } }
+  .receive .list li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 20px;
+    font-size: 14px;
+    color: #000000;
+    padding-bottom: 15px; }
+
+.receive .description {
+  /* Описание формулы: 
+    100% - 720px - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /6) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *2 - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (2 - 1)*120px добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+  width: calc( (((100% - 720px)/6)*2) + (2 - 1)*120px);
+  margin: 0 60px;
+  flex: 0 0 calc( (((100% - 720px)/6)*2) + (2 - 1)*120px);
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 20px;
+  font-size: 14px;
+  color: #000000;
+  text-align: left;
+  padding-bottom: 15px;
+  padding-bottom: 60px; }
+  @media all and (orientation: portrait), all and (max-width: 900px) {
+    .receive .description {
+      width: 100%;
+      margin: 0;
+      flex: 0 0 100%; } }

@@ -1,0 +1,210 @@
+@import "_grid.scss";
+@import "_typical_elements.scss";
+
+//Стили для шапки сайта
+
+.header {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    &.item_header {
+        //Вариация для шапки внутрених страниц (с ограниченной высотой шапки)
+        height: auto;
+        min-height: 600px;
+        padding-bottom: 60px;
+
+        .header__title {
+            @include column(4, false, true);
+            @include heder_title;
+        }
+
+        .header__description {
+            @include column(2, false, true);
+            @include header_discription;
+        }
+    }
+
+    &__logo {
+        position: absolute;
+        top: (30/1366)*100vh;
+        left: (30/1366)*100vw;
+        z-index: 50;
+        
+        @media all and (orientation: portrait), all and (max-width: 900px) {
+            left: $lining/4;
+            top: $lining/4;
+
+            img {max-width: 50%;}
+        }
+    }
+
+    .container {@include container(true);};
+
+    &__title {@include column(3, false, true);}
+    &__description {@include column(3, false, true);}
+
+    .menu_logo {
+        display: none;
+    }
+
+    &__menu {
+        transition: all 300ms ease-in-out;     
+
+        .menu-button {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 30px;
+            right: $lining/2;
+            z-index: 1000;
+            cursor: pointer;
+
+            @media all and (orientation: portrait), all and (max-width: 900px) {
+                right: $lining/4;
+            }
+
+            span {
+                display: block;
+                width: 26px;
+                height: 4px;
+                margin: 3px 3px 6px 0;
+
+                background-color: #fff;
+
+                transition: all 300ms ease-in-out;
+            }
+
+            &.on{
+                //Стили для нажатой кнопки меню
+                span:nth-child(1) {
+                    background: #fff;
+                    transform-origin: 50% 50%;
+                    transform: translateY(10px) rotate(45deg);
+                }
+
+                span:nth-child(2) {
+                    background: #fff;
+                    transform-origin: 50% 50%;
+                    transform: scaleX(0.01) scaleY(0.01);
+                }
+
+                span:nth-child(3) {
+                    background: #fff;
+                    transform-origin: 50% 50%;
+                    transform: translateY(-10px) rotate(-45deg);
+                }
+            }
+        }
+
+        nav {
+            //Стили для глвного меню в закрытом виде
+            position: absolute;
+            width: 400px;
+            height: 100vh;
+            top: 0;
+            right: 0;
+            padding: 90px;
+            box-sizing: border-box;
+
+            background: rgba(47, 13, 86, 0);
+
+            transform-origin: right center;
+            transform: scaleX(0.001);
+            transition: all 300ms ease-in-out;
+
+            @media all and (orientation: portrait), all and (max-width: 900px) {
+                width: 100%;
+                padding: 0;
+
+                ul {
+                    margin: 0 auto;
+                }
+            }
+        }
+
+        &.on {
+            //Стили для глвного меню в открытом состоянии
+            background: rgba(47, 13, 86, 0.6);
+            z-index: 100;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+
+            nav {
+                transform: scaleX(1);
+                background: rgba(47, 13, 86, 1);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+
+                ul li {
+                    list-style: none;
+                    
+                    a {
+                        font-family: Lato, sans-serif;
+                        font-style: normal;
+                        font-weight: 800;
+                        line-height: 60px;
+                        font-size: 36px;
+                        text-decoration: none;
+                        color: #FFFFFF;
+
+                        &:hover {
+
+                            color: #DB71B0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Стили для которые сохраняют положение страницы во время исчезновения хедера при прокрутки
+.header.fixed + * {margin-top: 100vh;}
+.item_header.header.fixed + * {margin-top: 600px;}
+
+.header.fixed, .item_header.header.fixed {
+    //Стили для шапки во время прокрутки
+    position: fixed;
+    top: 0;
+    z-index: 200;
+
+    height: 90px;
+    min-height: 90px;
+    padding-bottom: 0;
+    background: #fff;
+
+    .home_header__logo, .description, .header__logo, .header__title, .header__description, .item_header.header__title, .item_header.header__description {
+        display: none;
+    }
+
+    .menu_logo {
+        display: block;
+        position: absolute;
+        top: 30px;
+        left: $lining/2;
+        z-index: 50;
+
+        img {
+            height: 30px;
+        }
+
+        @media all and (orientation: portrait), all and (max-width: 900px) {
+            left: $lining/4;
+        }
+    }
+
+    .menu-button span {
+        background : linear-gradient(90deg, rgba(57, 78, 229, 1) 0%, rgba(219, 113, 176, 1) 100%);
+    } 
+}

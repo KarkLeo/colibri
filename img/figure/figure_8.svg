@@ -1,0 +1,44 @@
+<svg width="72" height="33" viewBox="0 0 72 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>figure_8</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(1169 -4496)">
+<g id="figure_8">
+<g id="pattern">
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="translate(-1140.7 4496)" fill="url(#paint0_linear)"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path1_fill" transform="translate(-1169 4496)" fill="url(#paint1_linear)"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path2_fill" transform="translate(-1156.7 4515)" fill="url(#paint2_linear)"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path3_fill" transform="translate(-1128.7 4515)" fill="url(#paint3_linear)"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-31.4961 -0 -0 -31.4961 31.4328 22.5504)">
+<stop offset="0" stop-color="#394EE5"/>
+<stop offset="0.9949" stop-color="#2F0D56"/>
+</linearGradient>
+<linearGradient id="paint1_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-26.3286 -0 -0 -26.3286 26.3286 19.9667)">
+<stop offset="0" stop-color="#394EE5"/>
+<stop offset="0.9949" stop-color="#2F0D56"/>
+</linearGradient>
+<linearGradient id="paint2_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-25.8932 -0 -0 -25.8932 25.796 19.5153)">
+<stop offset="0" stop-color="#394EE5"/>
+<stop offset="0.9949" stop-color="#2F0D56"/>
+</linearGradient>
+<linearGradient id="paint3_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-31.344 -0 -0 -31.344 31.5018 22.2407)">
+<stop offset="0" stop-color="#394EE5"/>
+<stop offset="0.9949" stop-color="#2F0D56"/>
+</linearGradient>
+<path id="path0_fill" d="M 7.2 13.6C 7.3 12.9 7.4 12.2 7.7 11.5C 8.1 10.3 8.7 9.3 9.4 8.4C 10.1 7.6 11 6.9 12.1 6.5C 13.2 6.1 14.4 5.8 15.8 5.8C 17.2 5.8 18.4 6 19.4 6.5C 20.5 6.9 21.4 7.6 22.1 8.4C 22.8 9.2 23.4 10.3 23.8 11.5C 24 12.2 24.2 12.9 24.3 13.6L 31.6 13.6C 31.4 12.1 31.1 10.8 30.6 9.4C 29.8 7.5 28.8 5.9 27.4 4.5C 26 3.1 24.4 2 22.4 1.2C 20.2 0.4 18.1 0 15.7 0C 13.3 0 11.2 0.4 9.2 1.2C 7.2 2 5.6 3.1 4.2 4.5C 2.8 5.9 1.7 7.5 0.999999 9.4C 0.499999 10.7 0.0999992 12.1 -7.62939e-07 13.6L 7.2 13.6L 7.2 13.6Z"/>
+<path id="path1_fill" d="M 7.3 13.6C 7.4 12.9 7.6 12.2 7.8 11.5C 8.2 10.3 8.8 9.3 9.6 8.4C 10.4 7.6 11.3 6.9 12.3 6.5C 13.4 6 14.5 5.8 15.8 5.8C 16.5 5.8 17.2 5.9 17.7 6C 18.3 6.1 18.7 6.2 19.1 6.4C 19.5 6.6 19.9 6.7 20.2 6.9C 20.5 7.1 20.8 7.3 21 7.4C 21.3 7.6 21.5 7.7 21.7 7.8C 22 8 22.3 8 22.5 8C 22.9 8 23.2 7.9 23.4 7.8C 23.6 7.6 23.8 7.5 23.9 7.3L 26.3 4.1C 25.7 3.5 25.1 3 24.3 2.5C 23.6 2 22.8 1.6 21.9 1.2C 21 0.8 20.1 0.6 19.1 0.4C 18.1 0.1 17 0 15.9 0C 13.5 0 11.4 0.4 9.4 1.2C 7.4 2 5.8 3 4.4 4.4C 3 5.8 1.9 7.4 1.1 9.3C 0.6 10.6 0.2 12.1 0 13.6L 7.3 13.6L 7.3 13.6Z"/>
+<path id="path2_fill" d="M 0.8 3.7C 1.5 5.6 2.5 7.3 3.7 8.6C 5 10 6.5 11.1 8.4 11.9C 10.2 12.7 12.3 13.1 14.6 13.1C 17.1 13.1 19.3 12.7 21.2 11.9C 23 11.1 24.6 9.9 25.8 8.3L 23 5.3C 22.8 5.1 22.7 5 22.5 5C 22.3 4.9 22.2 4.9 22 4.9C 21.8 4.9 21.6 4.9 21.4 5C 21.2 5.1 21 5.2 20.9 5.3C 20.5 5.7 20.1 6 19.7 6.2C 19.3 6.4 18.9 6.6 18.4 6.8C 17.9 7 17.5 7.1 16.9 7.1C 16.4 7.2 15.8 7.2 15.1 7.2C 14 7.2 12.9 7 12 6.6C 11 6.2 10.2 5.5 9.4 4.7C 8.7 3.9 8.1 2.8 7.7 1.6C 7.5 1.1 7.4 0.6 7.3 0L 1.90735e-07 0C 0.1 1.3 0.4 2.5 0.8 3.7Z"/>
+<path id="path3_fill" d="M 1.1 3.6C 1.9 5.5 2.9 7.2 4.3 8.6C 5.7 10 7.4 11.1 9.3 11.9C 11.3 12.7 13.4 13.1 15.8 13.1C 18.2 13.1 20.3 12.7 22.3 11.9C 24.2 11.1 25.9 10 27.3 8.6C 28.7 7.2 29.8 5.5 30.5 3.6C 31 2.5 31.3 1.3 31.5 0L 24.2 0C 24.1 0.5 24 1 23.8 1.5C 23.4 2.7 22.8 3.7 22.1 4.6C 21.4 5.4 20.5 6.1 19.4 6.5C 18.3 6.9 17.1 7.2 15.8 7.2C 14.4 7.2 13.2 7 12.1 6.5C 11 6.1 10.1 5.4 9.4 4.6C 8.7 3.8 8.1 2.7 7.7 1.5C 7.5 1 7.4 0.5 7.3 0L -7.62939e-07 0C 0.299999 1.3 0.700002 2.5 1.1 3.6Z"/>
+</defs>
+</svg>

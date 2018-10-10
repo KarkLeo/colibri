@@ -1,0 +1,100 @@
+@import "_grid.scss";
+@import "_typical_elements.scss";
+
+//стили для футера всего сайта и сео текста
+
+.footer {
+    margin-top: 60px;
+
+    .container {
+        @include container(true);
+        padding-bottom: 0;
+        //padding: 0 ($lining/2);
+
+        &::after {@include figure(7, 945, 90, 260); };
+    }
+    
+    .address {
+        width: calc( ((100% - #{$full_lining})/#{$columns_count}) + #{$lining} );
+        flex: 0 0 calc( ((100% - #{$full_lining})/#{$columns_count}) + #{$lining} );
+
+        @media all and (orientation: portrait), all and (max-width: 900px) {
+            width: 100%;
+            flex: 0 0 100%;
+            margin-top: 30px;
+        }
+
+        &__name {@include block_subtitle;};
+        &__value {@include block_text_2;};
+
+        &:first-child {
+            margin-left: $lining/2;
+            
+            @media all and (orientation: portrait), all and (max-width: 900px) {
+                margin-left: 0;
+            }
+        }
+    }
+
+    .contacts {
+        @include column(3, falce, true);
+        margin: 0;
+        
+
+        .description{
+            @include block_text_2;
+        }
+
+        &__phone, &__email {
+            display: block;
+            padding-bottom: 15px;
+
+            font-family: Lato, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 30px;
+            font-size: 18px;
+            color: #000000;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+   } 
+
+   &__copyright {
+        @include column(6, false, true);
+
+        border-top: 1px #000000 solid;
+        padding-top: 15px;
+        padding-bottom: 0;
+        margin-top: 15px;
+
+        @include block_text_2;
+   }
+}
+
+//---------- SEO-text. Start -----------
+
+.seo-text {
+    margin-top: 60px;
+
+    .container {&:before {@include figure(14, 1186, 296, 400)};}
+
+    .container p {
+        @include column(6);
+
+        font-family: Lato, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 30px;
+        font-size: 16px;
+        color: #000000;
+        text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
+
+        padding-top: 30px;
+    }
+}
+
+//---------- SEO-text. End -----------

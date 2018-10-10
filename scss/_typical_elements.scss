@@ -1,0 +1,307 @@
+//-----------  Standart elements. Start ----------
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 30px;
+    font-size: 16px;
+    color: #000000;
+}
+
+.page_block {
+    //Служит контейнером для всей страницы, его задача обрезать графику, выходящую за площать странинцы.
+    width: 100%;
+    overflow: hidden;
+}
+
+//-----------  Standart elements. End ----------
+
+//-----------  Typical elements. Start ----------
+
+@mixin block_title ($align: true) {
+    //Заголовок блоков на странице
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 52px;
+    font-size: 36px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #000000;
+
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    @if $align {
+        text-align: left;
+    } @else {
+        text-align: center;
+    }
+}
+.title {@include block_title(true);};
+
+
+@mixin block_subtitle ($align: true) {
+    //Подзаголовок блоков на странице
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 30px;
+    font-size: 24px;
+
+    padding-bottom: 30px;
+
+    @if $align {
+        text-align: left;
+    } @else {
+        text-align: center;
+    }
+}
+.subtitle {@include block_subtitle();};
+
+@mixin block_text {
+    //Основной текст на странице
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 30px;
+    font-size: 16px;
+    color: #000000;
+    text-align: left;
+
+    padding-bottom: 30px;
+}
+.description, .texts {@include block_text;};
+
+@mixin block_text_2 {
+    //Дополнительный текст на странице (меньше основного)
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 20px;
+    font-size: 14px;
+    color: #000000;
+    text-align: left;
+
+    padding-bottom: 15px;
+}
+
+@mixin form_title {
+    //Заголовок для форм
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 52px;
+    font-size: 36px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.form-title {@include form_title;};
+
+@mixin form_text {
+    //Текст для форм
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 20px;
+    font-size: 14px;
+    color: #FFFFFF;
+
+    padding-bottom: 30px;
+}
+.form-description {@include form_text;};
+
+@mixin form_button {
+    //Кнопка на форме
+    display: block;
+    width: calc( (((100% - #{$full_lining} + #{$lining})/#{$columns_count})*2) + #{$lining} ); //Кнопка равна двум колонкам
+    height: 60px;
+    margin: 0 ($lining/2);
+    
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 60px;
+    font-size: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    vertical-align: middle;
+    text-decoration: none;
+
+    background: transparent;
+
+    transition: all 500ms ease-in-out;
+
+    &:hover {
+        background: #FFFFFF;
+        color: #394EE5;
+    }
+
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+        margin: 30px 0 60px;
+        width: 100%;
+        flex: 0 0 100%;
+    }
+
+    &:focus {outline: none;};
+}
+.form-button {@include form_button;};
+
+@mixin heder_title {
+    //Заголовок в шапке
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    font-size: 96px;
+    color: #FFFFFF;
+
+    margin-top: 210px;
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+        margin-top: 90px;
+        font-size: 3rem;
+    }
+}
+.header__title {@include heder_title();};
+
+@mixin header_discription {
+    //Блок с дополнительной информацие в шапке (кроме главной)
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 20px;
+    font-size: 14px;
+    color: #FFFFFF;
+
+    border-top: 1px solid #ffffff;
+
+    margin-top: 210px;
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+        margin-top: 30px;
+    }
+
+    p {
+        padding-bottom: 20px;
+    }
+}
+.header__description {@include header_discription;};
+
+.invis {visibility: hidden;} //Служебный стиль для скрывания обьекта
+.hidden {display: none;} //Служебный стиль, чтобы убрать элемент
+
+//-----------  Typical elements. End ----------
+
+//-----------  Figure. Start ----------
+
+@mixin figure($figure_count, $x, $y, $yMax) {
+    /* Универсальный миксин для создание графического элемента.
+    Служит для удобства вставлять объекты из макета, 
+    пересчитывает размеры из макета в относительные единицы измерения отностительно контейнера.
+    Применяеться в всевдоэлементах.
+    Параметры (из макета)
+    1) номер фигуры
+    2) координата слева (от края макета)
+    3) координата сверху (от края блока в макете)
+    4) высота блока в макете */
+
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -100;
+    background-image: url("../img/figure/figure_" + $figure_count + ".svg");
+    background-repeat: no-repeat;
+    left: (($x)/1366)*100%;
+    top: (($y)/$yMax)*100%;
+
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+        opacity: 0.15;
+    }
+
+    //База всех графических элементов
+
+    @if ($figure_count == 1) {
+        width: 859px;
+        height: 618px;
+    }
+    @if ($figure_count == 2) {
+        width: 746px;
+        height: 540px;
+    }
+    @if ($figure_count == 3) {
+        width: 917px;
+        height: 448px;
+    }
+    @if ($figure_count == 4) {
+        width: 621px;
+        height: 467px;
+    }
+    @if ($figure_count == 5) {
+        width: 347px;
+        height: 229px;
+    }
+    @if ($figure_count == 6) {
+        width: 72px;
+        height: 33px;
+    }
+    @if ($figure_count == 7) {
+        width: 341px;
+        height: 341px;
+    }
+    @if ($figure_count == 8) {
+        width: 72px;
+        height: 33px;
+    }
+    @if ($figure_count == 9) {
+        width: 233px;
+        height: 66px;
+    }
+    @if ($figure_count == 10) {
+        width: 376px;
+        height: 324px;
+    }
+    @if ($figure_count == 11) {
+        width: 208px;
+        height: 66px;
+    }
+    @if ($figure_count == 12) {
+        width: 261px;
+        height: 100px;
+    }
+    @if ($figure_count == 13) {
+        width: 995px;
+        height: 506px;
+    }
+    @if ($figure_count == 14) {
+        width: 261px;
+        height: 100px;
+    }
+    @if ($figure_count == 15) {
+        width: 552px;
+        height: 552px;
+    }
+    @if ($figure_count == 16) {
+        width: 482px;
+        height: 265px;
+    }
+    @if ($figure_count == 17) {
+        width: 282px;
+        height: 233px;
+    }       
+}
+
+//-----------  Figure. End ----------

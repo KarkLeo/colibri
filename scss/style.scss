@@ -1,0 +1,709 @@
+@import "_grid.scss";
+@import "_typical_elements.scss";
+
+@import "_header.scss";
+@import "_footer.scss";
+
+//---------- Cuctom header. Start -----------
+
+.home_header {
+    background-image: url(../img/home_header.svg);
+    
+
+    &__logo {
+        max-width: 60%;
+        position: absolute;
+        top: (60/1366)*100vh;
+        left: (60/1366)*100vw;
+    }
+
+    .description {
+        font-family: Lato, sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 30px;
+        font-size: 18px;
+        color: #FFFFFF;
+        text-shadow: none;
+
+        position: absolute;
+        left: (54/1366)*100vw;
+        bottom: (138/1366)*100vh;
+
+        @include column(3);
+        //max-width: 80%;
+    }
+}
+
+.products_header {
+    background-image: url(../img/products_header.svg); 
+}
+
+.expertise_header {
+    background-image: url(../img/expertise_header.svg); 
+}
+
+.about-us_header {
+    background-image: url(../img/about-us_header.svg); 
+}
+
+.contacts_header {
+    background-image: url(../img/contacts_header.svg);
+
+    .contacts__phone, .contacts__email {
+        display: block;
+        padding-bottom: 15px;
+
+        font-family: Lato, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 30px;
+        font-size: 18px;
+        color: #fff;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.products-item_header {
+    background-image: url(../img/products-item_header.svg);
+}
+
+.expertise-item_header {
+    background-image: url(../img/expertise-item_header.svg);
+}
+
+//---------- Cuctom header. End -----------
+
+//---------- Form. start -----------
+
+.form-expertise {
+    background-image: url(../img/form_1_background.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+
+    .container { @include container(true);};
+    .form-title {@include column(6, false, true);};    
+    .form-description {@include column(2, 1, true);};
+}
+
+.form-ddd {
+    background-image: url(../img/form_2_background.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+
+    .container { @include container(true);};
+    .form-title {@include column(4, 1, true);}
+    .form-description {@include column(2, 1, true);}
+    .form {
+        @include column(2, false, true);
+        margin-bottom: 30px;
+
+        input {
+            width: 100%;
+            height: 30px;
+            margin-bottom: 30px;
+
+            border: none;
+            border-bottom: 1px #ffffff solid;
+            background: transparent;
+
+            font-family: Lato, sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 30px;
+            font-size: 18px;            
+            color: #fff;
+
+            &:focus {
+                &::-webkit-input-placeholder{color: rgba(255, 255, 255, 0.1);}
+                &::-moz-placeholder {color: rgba(255, 255, 255, 0.1);}
+                &:-moz-placeholder {color: rgba(255, 255, 255, 0.1);}
+                &:-ms-input-placeholder {color: rgba(255, 255, 255, 0.1);}
+
+                outline: none;
+            }
+
+            &::-webkit-input-placeholder{color: rgba(255, 255, 255, 0.5);}
+            &::-moz-placeholder {color: rgba(255, 255, 255, 0.5);}
+            &:-moz-placeholder {color: rgba(255, 255, 255, 0.5);}
+            &:-ms-input-placeholder {color: rgba(255, 255, 255, 0.5);}
+        }
+
+        .form-button {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}
+
+
+.form-project {
+    background-image: url(../img/form_3_background.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+
+    .container { @include container;};
+    .form-title {@include column(6, false);}
+    .form-description {@include column(4, 1);}
+    .form {
+        @include container(true);
+        margin-top: 30px;
+
+        &__left {
+            @include column(2, 1, true);
+
+            input {
+                width: 100%;
+                height: 30px;
+                margin-bottom: 30px;
+    
+                border: none;
+                border-bottom: 1px #ffffff solid;
+                background: transparent;
+    
+                font-family: Lato, sans-serif;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 30px;
+                font-size: 18px;
+                color: #fff;
+
+                &:focus {
+                    &::-webkit-input-placeholder{color: rgba(255, 255, 255, 0.1);}
+                    &::-moz-placeholder {color: rgba(255, 255, 255, 0.1);}
+                    &:-moz-placeholder {color: rgba(255, 255, 255, 0.1);}
+                    &:-ms-input-placeholder {color: rgba(255, 255, 255, 0.1);}
+    
+                    outline: none;
+                }
+    
+                &::-webkit-input-placeholder{color: rgba(255, 255, 255, 0.5);}
+                &::-moz-placeholder {color: rgba(255, 255, 255, 0.5);}
+                &:-moz-placeholder {color: rgba(255, 255, 255, 0.5);}
+                &:-ms-input-placeholder {color: rgba(255, 255, 255, 0.5);}
+            }
+        }
+        &__right {
+            @include column(2, false, true);
+
+            textarea {
+                width: 100%;
+                height: 150px;
+                margin-bottom: 30px;
+                resize: none;
+                overflow: hidden;
+    
+                border: none;
+                border-bottom: 1px #ffffff solid;
+                background-color: transparent;
+                background-image: repeating-linear-gradient(rgba(255,255,255,0) 0px, rgba(255,255,255,0) 29px, #fff 29px, #fff 30px);
+    
+                font-family: Lato, sans-serif;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 30px;
+                font-size: 18px;
+                color: #fff;
+
+                &:focus {
+                    &::-webkit-input-placeholder{color: rgba(255, 255, 255, 0.1);}
+                    &::-moz-placeholder {color: rgba(255, 255, 255, 0.1);}
+                    &:-moz-placeholder {color: rgba(255, 255, 255, 0.1);}
+                    &:-ms-input-placeholder {color: rgba(255, 255, 255, 0.1);}
+    
+                    outline: none;
+                }
+    
+                &::-webkit-input-placeholder{color: rgba(255, 255, 255, 0.5);}
+                &::-moz-placeholder {color: rgba(255, 255, 255, 0.5);}
+                &:-moz-placeholder {color: rgba(255, 255, 255, 0.5);}
+                &:-ms-input-placeholder {color: rgba(255, 255, 255, 0.5);}
+            }
+        }
+
+        margin-bottom: 30px;
+
+        .form-button {
+            @include column(2, 2, true);
+            margin-top: 60px;
+
+            @media all and (orientation: portrait), all and (max-width: 900px) {
+                width: calc( (((100% - #{$full_lining} + #{$lining})/#{$columns_count})*2) + #{$lining} );
+                max-width: 300px;
+                margin: 30px auto 60px;
+            }
+        }
+    }
+}
+
+//---------- Form. End -----------
+
+
+
+
+//----------- Home page. Start ----------
+
+.info-us {
+    
+    .container::before {@include figure(1, -415, 95, 605);};
+
+    .title {@include column(4,2);};
+    .description {@include column(4,2);};
+}
+
+.info-servise {
+
+    .text-box:nth-child(2)::before {@include figure(2, 882, -132, 1280)}
+    .text-box:nth-child(3)::before {@include figure(3, -577, 402, 1280)}
+    .text-box:nth-child(4)::before {@include figure(4, 1037, 734, 1280)}
+
+    .title {@include block_title(false);};
+
+    .text-box {
+        padding-bottom: 60px;
+
+        &:nth-child(odd) {@include column(3,3)};
+        &:nth-child(even) {@include column(3)};
+    }
+}
+
+.info-offer {
+
+    .container {
+        @include container(true);
+
+        &:before {@include figure(5, 1201, 10, 652)};
+        &:after {@include figure(6, 870, 472, 652)};
+    };
+    .title {@include column(6, false, true);}
+    .subtitle {@include column(6, false, true);}
+    
+    .list {
+        @include column(4, false, true);
+        column-count: 2;
+        column-gap: $lining;
+
+        padding-bottom: 30px;
+
+        @media all and (orientation: portrait), all and (max-width: 900px) {
+            column-count: 1;
+            column-gap: 0;
+            vertical-align: top;
+        }
+
+        li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            font-family: Lato, sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            line-height: 20px;
+            font-size: 14px;
+            color: #000000;
+
+            padding-bottom: 15px;
+        } 
+    }
+
+    .description {
+        @include column(2, false, true);
+        @include block_text_2;
+        padding-bottom: 60px;
+    }
+}
+
+//---------- Home page. End -----------
+
+
+//--------- Products page. Start ----------
+
+.products {
+
+    ul {
+        @include container(true);
+        margin-top: 90px;
+
+        &::before {@include figure(9, 1198, 371, 1803)}
+        &::after {@include figure(10, -68, 1240, 1803)}
+
+        li {
+            @include column(3, false, true);
+            list-style: none;
+
+            &:nth-child(1)::before {@include figure(8, 611, 181, 1803)}
+            
+            a {
+                display: block;
+                border-top: 1px solid #000;
+                margin-bottom: 90px;
+
+                text-decoration: none;
+                color: #000;
+
+                @media all and (orientation: portrait), all and (max-width: 900px) {              
+                    text-decoration-skip: ink;
+                    text-decoration: underline;
+                    text-decoration-style: dotted;
+                    text-decoration-color: rgb(57, 78, 229);
+                }
+
+                &:hover {
+                    border-top: 1px solid transparent;
+                    -moz-border-image: -moz-linear-gradient(90deg, rgba(57, 78, 229, 1) 0%, rgba(219, 113, 176, 1) 100%);
+                    -webkit-border-image: -webkit-linear-gradient(90deg, rgba(57, 78, 229, 1) 0%, rgba(219, 113, 176, 1) 100%);
+                    border-image: linear-gradient(90deg, rgba(57, 78, 229, 1) 0%, rgba(219, 113, 176, 1) 100%);
+                    border-image-slice: 1;
+
+                    background: linear-gradient(90deg, rgba(57, 78, 229, 1) 0%, rgba(219, 113, 176, 1) 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+
+                h3 {
+                    @include block_subtitle;
+                };
+                p {
+                    @include block_text_2;
+                };
+            }
+        }
+    };
+}
+
+//--------- Products page. End ----------
+
+//--------- Expertise page. Start ----------
+
+.expertise {
+
+    ul {
+        @include container(false);
+        margin-top: 90px;
+
+        &::before {@include figure(15, -160, 135, 1572)}
+        &::after {@include figure(17, 0, 1293, 1572)}
+
+        li {
+            @include column(4, 2, false);
+            list-style: none;
+
+            &:nth-child(1)::before {@include figure(16, -317, 820, 1572)}
+            
+            a {
+                display: block;
+                border-top: 1px solid #000;
+                margin-bottom: 90px;
+
+                text-decoration: none;
+                color: #000;
+
+                @media all and (orientation: portrait), all and (max-width: 900px) {              
+                    text-decoration-skip: ink;
+                    text-decoration: underline;
+                    text-decoration-style: dotted;
+                    text-decoration-color: rgb(57, 78, 229);
+                }
+
+                &:hover {
+                    border-top: 1px solid transparent;
+                    -moz-border-image: -moz-linear-gradient(90deg, rgba(57, 78, 229, 1) 0%, rgba(219, 113, 176, 1) 100%);
+                    -webkit-border-image: -webkit-linear-gradient(90deg, rgba(57, 78, 229, 1) 0%, rgba(219, 113, 176, 1) 100%);
+                    border-image: linear-gradient(90deg, rgba(57, 78, 229, 1) 0%, rgba(219, 113, 176, 1) 100%);
+                    border-image-slice: 1;
+
+                    background: linear-gradient(90deg, rgba(57, 78, 229, 1) 0%, rgba(219, 113, 176, 1) 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+
+                h3 {
+                    @include block_subtitle;
+                };
+                p {
+                    @include block_text_2;
+                };
+            }
+        }
+    };
+}
+
+//--------- Expertise page. End ----------
+
+//--------- About-us page. Start ----------
+
+.values {
+
+    ul {
+        @include container(false);
+        margin-top: 90px;
+
+        &:before {@include figure(1, -560, 110, 820)};
+
+        li {
+            @include column(4, 2, false);
+            list-style: none;
+            
+            display: block;
+            border-top: 1px solid #000;
+            padding-bottom: 90px;
+
+            text-decoration: none;
+            color: #000;
+
+            h3 {
+                @include block_subtitle;
+            };
+            p {
+                @include block_text_2;
+            };         
+        }
+    };
+}
+
+.our-team {
+    .container{&:before {@include figure(2, 1029, -5, 690)};}
+    .title {@include column(4);};
+    .description {@include column(4);};
+}
+
+.working-with-us {
+    .container{&:before {@include figure(17, -35, 50, 310)};}
+    .title {@include column(4, 2);};
+    .description {@include column(4, 2);};
+}
+
+.triggers {
+
+    ul {
+        @include container(true);
+        margin-top: 90px;
+
+        &:before {@include figure(6, 893, 300, 450)};
+        &:after {@include figure(5, 1183, 154, 450)};
+
+        li {
+            @include column(2, false, true);
+            list-style: none;
+            
+            display: block;
+            border-top: 1px solid #000;
+            padding-bottom: 90px;
+
+            text-decoration: none;
+            color: #000;
+
+            h3 {
+                @include block_subtitle;
+            };
+            p {
+                @include block_text_2;
+            };
+            
+            ul {
+                display: block;
+                margin: 0;
+
+                &::before, &::after {display: none}; 
+
+                li {
+                    @include block_text_2;
+
+                    width: 100%;
+                    padding-bottom: 5px;
+                    margin-left: 25px;
+                    margin-bottom: 0;
+                    border: none;
+
+                    &::before {
+                        content: "—";
+                        margin-right: 5px;
+                        margin-left: -20px;
+                    }
+
+                }
+            }
+        }
+    };
+}
+
+//--------- About-us page. End ----------
+
+//--------- Contacts page. Start -----------
+
+.maps {
+    background: gray;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__block {
+        width: 50%;
+        min-width: 500px;;
+        flex: 1 1 50%;
+        height: 500px;
+
+        padding-top: 135px;
+        padding-left: 20%;
+        box-sizing: border-box;
+
+        border: 1px solid #000;
+    }
+}
+
+//--------- Contacts page. End -----------
+
+//--------- Products-item page. Start -----------
+
+.item_why-us {
+
+    .container {
+        &:before {@include figure(10, 121, 92, 420)};
+    }
+    
+    .title {@include column(3,3);};
+    .description {@include column(3,3);};
+}
+
+.item_it-works {
+
+    ul {
+        @include container(true);
+        padding-bottom: 0;
+
+        &:before {@include figure(11, -35, 44, 960)};
+        &:after {@include figure(9, 1220, 296, 960)};
+
+        .title {
+            @include column(6, false, true);
+            @include block_title(false);
+        }
+
+        li {
+            @include column(3, false, true);
+            list-style: none;
+
+            display: block;
+            border-top: 1px solid #000;
+            padding-bottom: 90px;
+
+            text-decoration: none;
+            color: #000;
+
+            h3 {
+                @include block_subtitle;
+            };
+
+            p {
+                @include block_text_2;
+            };
+        }
+    };
+}
+
+.solution {
+
+    .container{
+        @include container(true);
+
+        &:before {@include figure(12, 1138, 33, 1045)};
+        &:after {@include figure(13, -671, 383, 1045)};
+    }
+
+    .title {
+        @include column(6, false, true);
+        @include block_title(false);
+    }
+
+    .description {@include column(3, false, true);}
+
+    .list {
+        @include column(3, false, true);
+
+        li {
+            list-style: none;
+
+            display: block;
+            border-top: 1px solid #000;
+            margin-bottom: 60px;
+
+            text-decoration: none;
+            color: #000;
+
+            h3 {
+                font-family: Lato, sans-serif;
+                font-style: normal;
+                font-weight: bold;
+                line-height: normal;
+                font-size: 18px;
+                color: #000000;
+            };
+        }
+    }
+}
+
+//--------- Products-item page. End -----------
+
+//--------- Expertise-item page. Start -----------
+
+.receive {
+
+    .container {
+        @include container(true);
+
+        &:before {@include figure(5, 1201, 10, 652)};
+        &:after {@include figure(6, 870, 472, 652)};
+    };
+    .title {
+        @include column(6, false, true);
+        @include block_title(false);
+    }
+    
+    .list {
+        @include column(4, false, true);
+        column-count: 2;
+        column-gap: $lining;
+
+        padding-bottom: 30px;
+
+        @media all and (orientation: portrait), all and (max-width: 900px) {
+            column-count: 1;
+            column-gap: 0;
+            vertical-align: top;
+        }
+
+        li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            font-family: Lato, sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            line-height: 20px;
+            font-size: 14px;
+            color: #000000;
+
+            padding-bottom: 15px;
+        } 
+    }
+
+    .description {
+        @include column(2, false, true);
+        @include block_text_2;
+        padding-bottom: 60px;
+    }
+}
+
+//--------- Expertise-item page. End -----------

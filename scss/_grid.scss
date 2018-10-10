@@ -1,0 +1,62 @@
+/* Сетка представляеться собой колоночную структуру с фиксированным промежутком.
+   Колонки динамически расширяются до определенного предела (до ширины определенной контейнера).
+   По бокам от крайних колонок существует отступ равен половине промежутка.
+   При маленьком разрешении все колонки становяться одной ширины равной ширике колонки,
+   в таком лучае отступы по бокам равные четверит промежутка.
+   Колонки и контейнер опредедляется параметрически.*/
+
+//-----------  Grid sistem. Start ----------
+
+$lining: 120px; //Ширина промежутка
+$columns_count: 6; //Колличество колонок
+$full_lining: $columns_count*$lining; //Суммарный промежуток
+
+@mixin container($flex: false) {
+    //Параметр миксина опрделеяет флекс или нет (true и false соответственон)
+	margin: 0 auto;
+	max-width: 1500px; //Максимальная ширина контейнера
+	padding: 0 0 30px;
+	position: relative;
+    width: 100%;
+    box-sizing: border-box;
+
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+        padding: 0 ($lining/4);    
+    }
+
+    @if $flex {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+.container { 
+    @include container;
+    position: relative;
+};
+
+
+@mixin column($columns, $offset: false, $flex: false) {
+    //Первый параметр: ширина блока в колонках
+    //Второй параметр: отступ слева в колонках (false если отступа нет)
+    //Третий параметр: свойство флекс объекта (включено или выключено)
+
+    /* Описание формулы: 
+    100% - #{$full_lining} - определяет ширину всех колонок в процентах (от 100% ширины отнимаеться ширина всех промежутков)
+                            /#{$columns_count}) - определяем ширину одной колонки (делим общую ширину колонок на их общее колличество)
+                                               *#{$columns} - определеям ширину колонок в блоке (умнажаем ширину одной колонки на колличесвто колонок в боке)
+                                                            + (#{$columns} - 1)*#{$lining} добавляем промежутки внутри блока (на один меньше, нежели колличество колонок в блоке) */
+    width: calc( (((100% - #{$full_lining})/#{$columns_count})*#{$columns}) + (#{$columns} - 1)*#{$lining} );
+    margin: 0 ($lining/2);
+
+    @media all and (orientation: portrait), all and (max-width: 900px) {
+        width: 100%;
+        margin: 0;
+        flex: 0 0 100%;
+    }
+
+    @if $flex {flex: 0 0 calc( (((100% - #{$full_lining})/#{$columns_count})*#{$columns}) + (#{$columns} - 1)*#{$lining} );};
+    @if $offset {margin-left: calc( (((100% - #{$full_lining})/#{$columns_count})*#{$offset}) + (#{$offset} + 0.5)*#{$lining} );}; //(#{$offset} + 0.5) множитель промежутка выглядит иначе
+}
+
+//-----------  Grid sistem. End ----------
